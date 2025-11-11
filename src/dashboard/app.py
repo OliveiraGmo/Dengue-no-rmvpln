@@ -70,9 +70,10 @@ def main_dashboard():
     )
 
     # 5. Análise RMVP
-    show_rmvp_analysis(df_rmvp=df_rmvp_filtered, municipality_col=municipality_col, months=months)
+   # show_rmvp_analysis(df_rmvp=df_rmvp_filtered, municipality_col=municipality_col, months=months)
 
 
 if __name__ == "__main__":
     main_dashboard()
+
 
