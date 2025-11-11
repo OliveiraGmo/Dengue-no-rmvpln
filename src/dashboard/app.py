@@ -55,7 +55,7 @@ def main_dashboard():
     
 
     # 2. Gráfico de previsão (real vs previsto)  -Modelos de ML
-    show_forecast(df_rmvp=df_rmvp_filtered)
+    #show_forecast(df_rmvp=df_rmvp_filtered)
 
    
 
@@ -75,3 +75,4 @@ def main_dashboard():
 
 if __name__ == "__main__":
     main_dashboard()
+
