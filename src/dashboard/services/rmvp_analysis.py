@@ -3,7 +3,7 @@ import streamlit as st
 
 
 def show_rmvp_analysis(df_rmvp, municipality_col, months):
-    st.header("Análise RMVP (Região Metropolitana do Vale do Paraíba)")
+    st.header("Análise RMVPLN (Região Metropolitana do Vale do Paraíba e Litoral Norte)")
     municipios_rmvp = sorted(df_rmvp[municipality_col].unique())
     col1, col2 = st.columns(2)
     with col1:
@@ -26,15 +26,16 @@ def show_rmvp_analysis(df_rmvp, municipality_col, months):
         with col_chart:
             st.plotly_chart(fig_rmvp, use_container_width=True)
         with col_table:
-            st.markdown("**Resumo do município e ano selecionados (RMVP)**")
+            st.markdown("**Resumo do município e ano selecionados (RMVPLN)**")
             st.dataframe(df_rmvp_filtrado[[municipality_col, "Ano", "Total"]])
     else:
-        st.info("Não há dados para o município e ano selecionados na RMVP.")
+        st.info("Não há dados para o município e ano selecionados na RMVPLN.")
 
     st.subheader("Evolução anual dos casos na RMVP")
     df_rmvp_ano = df_rmvp.groupby("Ano")["Total"].sum().reset_index()
     fig_rmvp_ano = px.line(
-        df_rmvp_ano, x="Ano", y="Total", markers=True, title="Casos Totais por Ano - RMVP"
+        df_rmvp_ano, x="Ano", y="Total", markers=True, title="Casos Totais por Ano - RMVPLN"
     )
     # ocupar largura total, mas com altura controlada
     st.plotly_chart(fig_rmvp_ano.update_layout(height=380), use_container_width=True)
+
