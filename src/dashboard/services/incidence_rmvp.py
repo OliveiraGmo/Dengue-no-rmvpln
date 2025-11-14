@@ -25,7 +25,7 @@ def show_incidence_rmvp():
     fig = px.line(
         dados_filtrados,
         x="Ano",
-        y=meses,
+        y='Total',
         color="Município de notificação",
         title="Incidência de Dengue no RMVP de 2007 à 2024",
     )
@@ -66,4 +66,5 @@ def show_incidence_rmvp():
 
 #substituido meses por total para feração corret do grafico
 # utilizando agora coluna  'Total'
+
 
