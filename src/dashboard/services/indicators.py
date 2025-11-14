@@ -26,8 +26,8 @@ def show_indicators(df_rmvp, municipality_col):
         """
         <style>
         .dashboard-bar {
-            background: #2874A6;
-            color: #fff;
+            background: var(--secondary-background-color);
+            color: var(--text-color);
             padding: 18px 0 10px 0;
             text-align: center;
             font-size: 2.2rem;
@@ -36,8 +36,8 @@ def show_indicators(df_rmvp, municipality_col):
             margin-bottom: 0;
         }
         .dashboard-date {
-            background: #FDF6E3;
-            color: #D32F2F;
+            background: var(--secondary-background-color);
+            color: var(--text-color);
             font-size: 1.1rem;
             font-weight: bold;
             text-align: right;
@@ -58,10 +58,10 @@ def show_indicators(df_rmvp, municipality_col):
         
         /* Definição de .card-indicador (removida a duplicata) */
         .card-indicador {
-            background: #2874A6;
+            background: var(--secondary-background-color);
             border-radius: 16px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-            border: 1px solid #1B4F72;
+            border: 1px solid var(--gray-30);
             padding: 22px 10px 18px 10px;
             min-width: 220px;
             max-width: 270px;
@@ -78,14 +78,14 @@ def show_indicators(df_rmvp, municipality_col):
         }
         .card-indicador .titulo-indicador {
             font-size: 1.1rem;
-            color: #fff;
+            color: var(--text-color);
             margin-bottom: 6px;
             font-weight: 500;
         }
         .card-indicador .valor-indicador {
             font-size: 2rem;
             font-weight: bold;
-            color: #fff;
+            color: var(--text-color);
             line-height: 1.2;
             margin-bottom: 0;
         }
@@ -115,16 +115,13 @@ def show_indicators(df_rmvp, municipality_col):
     )
     col1, col2, col3, col4 = st.columns(4)
     
-    # --- MUDANÇA PRINCIPAL AQUI ---
-    # Removido height:200px;
-    # Adicionado height: 100%; (para preencher a coluna)
-    # Adicionado min-height: 180px; (para garantir um tamanho mínimo)
+    
     card_style = """
         <div style="
-            background:rgba(40,116,166,0.0);  /* transparente */
+            background: var(--secondary-background-color);
             border-radius:16px;
             box-shadow:0 2px 8px rgba(0,0,0,0.15);
-            border:1px solid #1B4F72;
+            border: 1px solid var(--gray-30);
             padding:20px;
             text-align:center;
             display:flex;
@@ -134,7 +131,7 @@ def show_indicators(df_rmvp, municipality_col):
             width:100%;
             height: 100%; /* Faz o card preencher a altura da coluna */
             min-height: 180px; /* Garante uma altura mínima */
-            color:#fff;
+            color: var(--text-color);
         ">
             <span style='font-size:2.2rem;margin-bottom:6px;'>{icon}</span>
             <span style='font-size:1.1rem;font-weight:500;margin-bottom:6px;'>{title}</span>
@@ -164,4 +161,5 @@ def show_indicators(df_rmvp, municipality_col):
         ),
         unsafe_allow_html=True,
     )
+
 
