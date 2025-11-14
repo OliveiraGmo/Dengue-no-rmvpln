@@ -18,7 +18,7 @@ def show_rmvp_analysis(df_rmvp, municipality_col, months):
         casos_mensais_rmvp = df_rmvp_filtrado[months].sum().reset_index()
         casos_mensais_rmvp.columns = ["Mês", "Casos"]
         fig_rmvp = px.bar(
-            casos_mensais_rmvp, x="Mês", y="Casos", title="Casos Mensais de Dengue - RMVP"
+            casos_mensais_rmvp, x="Mês", y="Casos", title="Casos Mensais de Dengue - RMVPLN"
         )
 
         # Mostrar gráfico mensal e resumo do município lado-a-lado para melhor alinhamento
@@ -38,4 +38,5 @@ def show_rmvp_analysis(df_rmvp, municipality_col, months):
     )
     # ocupar largura total, mas com altura controlada
     st.plotly_chart(fig_rmvp_ano.update_layout(height=380), use_container_width=True)
+
 
