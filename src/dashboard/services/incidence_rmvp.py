@@ -8,7 +8,7 @@ import streamlit as st
 def show_incidence_rmvp():
     st.header("Incidência de Dengue no RMVP de 2007 à 2024")
     dados = pd.read_csv("src/data/dados_incidencia_mensal.csv")
-    meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
+    total = dados['Total']
 
     municipios = sorted(dados["Município de notificação"].unique())
     municipios_selecionados = st.multiselect(
@@ -25,7 +25,7 @@ def show_incidence_rmvp():
     fig = px.line(
         dados_filtrados,
         x="Ano",
-        y=meses,
+        y=total,
         color="Município de notificação",
         title="Incidência de Dengue no RMVP de 2007 à 2024",
     )
@@ -63,3 +63,6 @@ def show_incidence_rmvp():
     fig.update_layout(showlegend=True)
     st.plotly_chart(fig, use_container_width=True)
 
+
+#substituido meses por total para feração corret do grafico
+# utilizando agora coluna  'Total'
