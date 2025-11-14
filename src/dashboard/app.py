@@ -63,18 +63,19 @@ def main_dashboard():
 
     
 
-   # show_evolution(
-      #  df_rmvp=df_rmvp_filtered,
-       # municipality_col=municipality_col,
-       # municipalities=municipalities,
- #   )
+    show_evolution(
+        df_rmvp=df_rmvp_filtered,
+        municipality_col=municipality_col,
+        municipalities=municipalities,
+    )
 
     # 5. Análise RMVP
-   # show_rmvp_analysis(df_rmvp=df_rmvp_filtered, municipality_col=municipality_col, months=months)
+    show_rmvp_analysis(df_rmvp=df_rmvp_filtered, municipality_col=municipality_col, months=months)
 
 
 if __name__ == "__main__":
     main_dashboard()
+
 
 
 
