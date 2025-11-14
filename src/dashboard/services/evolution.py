@@ -230,7 +230,7 @@ def _fit_predict_lstm(train_df, test_df, lags=12, epochs=60):
 
 def show_evolution(df_rmvp, municipality_col, municipalities):
     # --- Parte original: evolução por município ---
-    st.header("Evolução temporal dos casos por município e região")
+    st.header("Evolução temporal dos casos por município ")
     df_mun_ano = df_rmvp.groupby([municipality_col, "Ano"])["Total"].sum().reset_index()
     municipio_evol = st.selectbox("Selecione o município para evolução temporal", municipalities)
     df_evol = df_mun_ano[df_mun_ano[municipality_col] == municipio_evol]
@@ -441,3 +441,4 @@ def show_evolution(df_rmvp, municipality_col, municipalities):
             )
 
             st.plotly_chart(fig_compare, use_container_width=True)
+
